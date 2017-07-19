@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">RecyclerViewEasy</string>
+    <array name="names">
+        <item>Google</item>
+        <item>Apple</item>
+        <item>Alibaba</item>
+        <item>Wuba</item>
+    </array>
+</resources>
