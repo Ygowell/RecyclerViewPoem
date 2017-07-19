@@ -18,7 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".LinearActivity">
+        <activity android:name=".linear.LinearActivity">
+        </activity>
+        <activity android:name=".grid.GridActivity">
         </activity>
     </application>
 

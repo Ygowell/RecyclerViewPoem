@@ -1,4 +1,4 @@
-package com.jam.recyclervieweasy;
+package com.jam.recyclervieweasy.grid;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jam.recyclervieweasy.R;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -15,24 +17,24 @@ import butterknife.ButterKnife;
  * Created by jam on 17/7/19.
  */
 
-public class LinearRecyclerAdapter extends RecyclerView.Adapter<LinearRecyclerAdapter.LinearViewHolder> {
+public class GridRecyclerAdapter extends RecyclerView.Adapter<GridRecyclerAdapter.GridViewHolder> {
 
     private static Context mContext;
     private String[] mNames;
 
-    public LinearRecyclerAdapter(Context context, String[] names) {
+    public GridRecyclerAdapter(Context context, String[] names) {
         mContext = context;
         mNames = names;
     }
 
     @Override
-    public LinearViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new LinearViewHolder(LayoutInflater.from(mContext)
-                .inflate(R.layout.item_linear, parent, false));
+    public GridViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        return new GridViewHolder(LayoutInflater.from(mContext)
+                .inflate(R.layout.item_grid, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(LinearViewHolder holder, int position) {
+    public void onBindViewHolder(GridViewHolder holder, int position) {
         holder.nameTv.setText(mNames[position]);
     }
 
@@ -44,12 +46,12 @@ public class LinearRecyclerAdapter extends RecyclerView.Adapter<LinearRecyclerAd
         return mNames.length;
     }
 
-    public static class LinearViewHolder extends RecyclerView.ViewHolder {
+    public static class GridViewHolder extends RecyclerView.ViewHolder {
 
         @BindView(R.id.tv_name)
         TextView nameTv;
 
-        public LinearViewHolder(View itemView) {
+        public GridViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
             itemView.setOnClickListener(new View.OnClickListener() {

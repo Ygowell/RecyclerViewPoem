@@ -1,23 +1,26 @@
 package com.jam.recyclervieweasy;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import butterknife.ButterKnife;
+import com.jam.recyclervieweasy.grid.GridActivity;
+import com.jam.recyclervieweasy.linear.LinearActivity;
+
 import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @OnClick({R.id.btn_linear})
     public void onClickLinearBtn(View view) {
-        LinearActivity.startMyself(this);
+        LinearActivity.startMyself(this, LinearActivity.class);
+    }
+
+    @OnClick(R.id.btn_grid)
+    public void onClickGridBtn() {
+        GridActivity.startMyself(this, GridActivity.class);
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+    protected int getLayoutId() {
+        return R.layout.activity_main;
     }
 }
