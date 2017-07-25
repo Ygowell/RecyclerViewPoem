@@ -21,6 +21,8 @@ public class LinearActivity extends BaseActivity {
     @Override
     protected void initContentView() {
         mLinearRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mLinearRecyclerView.addItemDecoration(new DefaultItemDecoration(getResources(),
+                R.color.colorPrimary, R.dimen.default_size, LinearLayoutManager.VERTICAL));
         mLinearRecyclerView.setAdapter(new LinearRecyclerAdapter(this,
                 getResources().getStringArray(R.array.names)));
     }
